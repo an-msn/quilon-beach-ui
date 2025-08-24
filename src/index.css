@@ -5,22 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: "PP Editorial Old";
-  src: url("/fonts/PPEditorialOld-Regular.woff2") format("woff2"),
-    url("/fonts/PPEditorialOld-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "PP Editorial Old";
-  src: url("/fonts/PPEditorialOld-Italic.woff2") format("woff2"),
-    url("/fonts/PPEditorialOld-Italic.woff") format("woff");
-  font-weight: 400;
-  font-style: italic;
-}
-
 /* ======================= */
 /* ==== BASE STYLES ===== */
 /* ======================= */
