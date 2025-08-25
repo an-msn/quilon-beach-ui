@@ -14,15 +14,15 @@ const Footer = () => {
     <footer className="bg-[#FAF9F5] text-[#333D2E] relative overflow-hidden">
       {/* Awards Section */}
       <div className="bg-[#F0EDE6] py-12 border-b border-[#E5E2D9]">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="flex items-center justify-center mb-8">
             <FiAward className="text-[#667250] mr-3" size={24} />
-            <h3 className="font-custom-serif text-2xl text-center text-[#333D2E]">
+            <h3 className="font-serif text-2xl text-center text-[#333D2E]">
               RECOGNIZED EXCELLENCE
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-2 md:px-0">
             {[
               {
                 title: "Travel + Leisure World's Best",
@@ -66,12 +66,12 @@ const Footer = () => {
       </div>
 
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 pt-16 pb-10">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-10 mb-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl pt-16 pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-10 mb-16">
           {/* Brand column */}
           <div className="lg:col-span-2">
             <div className="mb-8">
-              <h2 className="font-custom-serif text-3xl mb-2 text-[#333D2E]">
+              <h2 className="font-serif text-3xl mb-2 text-[#333D2E]">
                 THE QUILON BEACH HOTEL
               </h2>
               <div className="w-20 h-0.5 bg-[#667250] mb-4"></div>
@@ -110,7 +110,7 @@ const Footer = () => {
 
           {/* Explore column */}
           <div>
-            <h3 className="font-custom-serif text-lg mb-6 relative inline-block text-[#333D2E]">
+            <h3 className="font-serif text-lg mb-6 relative inline-block text-[#333D2E]">
               EXPLORE
               <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#667250]"></span>
             </h3>
@@ -138,7 +138,7 @@ const Footer = () => {
 
           {/* Contact column */}
           <div>
-            <h3 className="font-custom-serif text-lg mb-6 relative inline-block text-[#333D2E]">
+            <h3 className="font-serif text-lg mb-6 relative inline-block text-[#333D2E]">
               CONTACT
               <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#667250]"></span>
             </h3>
@@ -162,7 +162,7 @@ const Footer = () => {
 
           {/* Newsletter column */}
           <div>
-            <h3 className="font-custom-serif text-lg mb-6 relative inline-block text-[#333D2E]">
+            <h3 className="font-serif text-lg mb-6 relative inline-block text-[#333D2E]">
               STAY IN TOUCH
               <span className="absolute -bottom-2 left-0 w-8 h-0.5 bg-[#667250]"></span>
             </h3>

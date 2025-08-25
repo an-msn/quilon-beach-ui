@@ -180,8 +180,8 @@ const Dining = () => {
       {/* Luxury background pattern */}
       <div className="luxury-pattern absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNjAgMTBsNjAgNjBMNjAgMTMwTDAgNzBaTTE0MCA3MGw2MCA2MEwxNDAgMTkwTDEwMCAxMzBaIiBmaWxsPSIjMzMzIiBmaWxsLW9wYWNpdHk9IjAuMSIvPjwvc3ZnPg==')]"></div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Image Column */}
           <div ref={imageRef} className="opacity-0">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-1000 hover:shadow-3xl">
@@ -201,7 +201,7 @@ const Dining = () => {
           </div>
 
           {/* Content Column */}
-          <div>
+          <div className="px-2 md:px-0">
             <div ref={subtitleRef} className="opacity-0">
               <span className="text-[#A39788] text-sm uppercase tracking-widest font-semibold">
                 Culinary Excellence
@@ -209,7 +209,7 @@ const Dining = () => {
             </div>
 
             <div ref={titleRef} className="opacity-0 mt-2 mb-6">
-              <h2 className="font-serif text-4xl md:text-5xl text-[#333D2E] leading-tight">
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-[#333D2E] leading-tight">
                 Cuisine, Cocktails{" "}
                 <span className="italic block">and Cellars</span>
               </h2>
@@ -218,7 +218,7 @@ const Dining = () => {
             <div className="mb-6">
               <p
                 ref={addToDescriptionRefs}
-                className="opacity-0 text-lg text-gray-600 leading-relaxed"
+                className="opacity-0 text-base md:text-lg text-gray-600 leading-relaxed"
               >
                 Meals at The Quilon Beach Hotel are unhurried affairs—rooted in
                 Keralan tradition and guided by the season. Each dish is
@@ -230,7 +230,7 @@ const Dining = () => {
             <div className="mb-8">
               <p
                 ref={addToDescriptionRefs}
-                className="opacity-0 text-lg text-gray-600 leading-relaxed"
+                className="opacity-0 text-base md:text-lg text-gray-600 leading-relaxed"
               >
                 In the evening, the fire is lit, the wood-paneled bar hums
                 softly, and the cellar reveals its treasures. Our sommelier has
@@ -246,7 +246,7 @@ const Dining = () => {
                 BAR AND DINING
               </h3>
 
-              <div className="dining-features grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="dining-features grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div ref={addToFeaturesRef} className="opacity-0 group">
                   <div className="flex items-start space-x-4 p-3 rounded-lg transition-all duration-300 group-hover:bg-white group-hover:shadow-md">
                     <div className="flex-shrink-0 text-[#A39788] mt-1 group-hover:scale-110 transition-transform duration-300">
@@ -317,8 +317,10 @@ const Dining = () => {
             </div>
 
             <div ref={buttonRef} className="mt-10 opacity-0">
-              <button className="group inline-flex items-center bg-[#A39788] text-white px-8 py-4 rounded-full hover:bg-[#8C8275] transition-all duration-500 overflow-hidden shadow-lg hover:shadow-xl">
-                <span className="relative z-10">View Our Menus</span>
+              <button className="group inline-flex items-center bg-[#A39788] text-white px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-[#8C8275] transition-all duration-500 overflow-hidden shadow-lg hover:shadow-xl">
+                <span className="relative z-10 text-sm md:text-base">
+                  View Our Menus
+                </span>
                 <FiChevronRight className="ml-2 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20 -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
               </button>

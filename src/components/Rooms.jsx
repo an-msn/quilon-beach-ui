@@ -149,7 +149,7 @@ const RoomsIntro = () => {
       ref={sectionRef}
       className="relative pt-16 pb-8 lg:pt-24 bg-[#F5F3ED]"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div>
@@ -216,15 +216,15 @@ const RoomList = () => {
   return (
     // Removed top padding to tighten space
     <section className="bg-[#F5F3ED] pt-16 pb-12 lg:pb-15">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {/* Container with rounded corners and overflow hidden */}
-        <div className="border border-gray-300 rounded-3xl overflow-hidden">
+        <div className="border border-gray-300 rounded-3xl overflow-hidden mx-0 md:mx-4 lg:mx-8">
           {roomsData.map((room) => (
             <a
               key={room.id}
               href="#"
               // Separator border added to all but the last item
-              className="group relative flex items-center w-full p-8 transition-colors duration-500 ease-in-out overflow-hidden border-b border-gray-300 last:border-b-0"
+              className="group relative flex items-center w-full p-6 md:p-8 transition-colors duration-500 ease-in-out overflow-hidden border-b border-gray-300 last:border-b-0"
               onMouseEnter={() => setHoveredRoomId(room.id)}
               onMouseLeave={() => setHoveredRoomId(null)}
               style={{
@@ -259,7 +259,7 @@ const RoomList = () => {
                 }}
               >
                 <div>
-                  <h3 className="font-serif text-3xl lg:text-4xl">
+                  <h3 className="font-serif text-2xl md:text-3xl lg:text-4xl">
                     {room.title}
                   </h3>
                   <p
@@ -275,7 +275,7 @@ const RoomList = () => {
                 {/* Number / Arrow */}
                 <div className="relative flex-shrink-0">
                   <div
-                    className={`absolute top-1/2 right-0 -translate-y-1/2 flex items-center justify-center w-14 h-14 rounded-full transition-opacity duration-300 ease-in-out ${
+                    className={`absolute top-1/2 right-0 -translate-y-1/2 flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full transition-opacity duration-300 ease-in-out ${
                       hoveredRoomId === room.id ? "opacity-0" : "opacity-100"
                     }`}
                     style={{ backgroundColor: "#687161", color: "#F5F3ED" }}
@@ -283,7 +283,7 @@ const RoomList = () => {
                     <span className="font-semibold">{room.number}</span>
                   </div>
                   <div
-                    className={`absolute top-1/2 right-0 -translate-y-1/2 flex items-center justify-center w-14 h-14 rounded-full bg-white/20 transition-opacity duration-300 ease-in-out ${
+                    className={`absolute top-1/2 right-0 -translate-y-1/2 flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/20 transition-opacity duration-300 ease-in-out ${
                       hoveredRoomId === room.id ? "opacity-100" : "opacity-0"
                     }`}
                   >
@@ -302,10 +302,10 @@ const RoomList = () => {
 // --- Main Page Component ---
 const RoomsPage = () => {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <RoomsIntro />
       <RoomList />
-    </>
+    </div>
   );
 };
 

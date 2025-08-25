@@ -12,12 +12,9 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="font-sans text-gray-800 bg-gray-50">
-      {" "}
-      {/* Optional: nice bg color */}
+    <div className="font-sans text-gray-800">
       <Header />
-      {/* SOLUTION APPLIED HERE */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <main>
         <Hero />
         <InfoSection />
         <About />

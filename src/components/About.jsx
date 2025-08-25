@@ -10,8 +10,6 @@ import {
   FiArrowLeft,
   FiArrowRight,
 } from "react-icons/fi";
-import hotel_img2 from "../assets/images/about2.jpg";
-import hotel_img3 from "../assets/images/about3.jpg";
 
 // Register the GSAP plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -34,12 +32,12 @@ const About = () => {
       alt: "Elegant hotel suite with ocean view",
     },
     {
-      src: hotel_img2,
-      alt: "Exterior",
+      src: "https://images.pexels.com/photos/271619/pexels-photo-271619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      alt: "Hotel exterior",
     },
     {
-      src: hotel_img3,
-      alt: "Exterior",
+      src: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      alt: "Hotel lobby",
     },
   ];
 
@@ -119,15 +117,15 @@ const About = () => {
       ref={sectionRef}
       className="relative py-16 lg:py-24 overflow-hidden bg-[#F5F3ED]"
     >
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         <div className="headline-container text-center max-w-4xl mx-auto mb-16">
           <div className="overflow-hidden pb-2">
-            <h2 className="reveal-text font-custom-serif text-5xl md:text-6xl text-[#333D2E] leading-tight">
+            <h2 className="reveal-text font-serif text-5xl md:text-6xl text-[#333D2E] leading-tight">
               Where the Horizon
             </h2>
           </div>
           <div className="overflow-hidden pb-2">
-            <h2 className="reveal-text font-custom-serif text-5xl md:text-6xl text-[#333D2E] leading-tight">
+            <h2 className="reveal-text font-serif text-5xl md:text-6xl text-[#333D2E] leading-tight">
               Meets Hospitality
             </h2>
           </div>
@@ -194,7 +192,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Left Column - Commitment Text */}
             <div className="feature-content">
-              <h3 className="font-custom-serif text-3xl md:text-4xl text-[#333D2E] mb-6">
+              <h3 className="font-serif text-3xl md:text-4xl text-[#333D2E] mb-6">
                 A Commitment to Unrivaled Comfort
               </h3>
               <p className="text-lg text-gray-600 leading-relaxed">

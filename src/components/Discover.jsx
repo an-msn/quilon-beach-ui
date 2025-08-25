@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FiMapPin, FiClock, FiArrowRight } from "react-icons/fi";
-import lake from "../assets/images/Ashtamudi lake.jpg";
 
 // Register the GSAP plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -10,7 +9,6 @@ gsap.registerPlugin(ScrollTrigger);
 const DiscoverKollam = () => {
   const sectionRef = useRef(null);
   const cardsRef = useRef([]);
-  // const titleRef = useRef(null);
 
   // Add to cards ref array
   const addToCardsRef = (el) => {
@@ -26,7 +24,8 @@ const DiscoverKollam = () => {
       name: "Ashtamudi Lake",
       description:
         "A serene backwater destination with palm-fringed shores and houseboat cruises.",
-      image: lake,
+      image:
+        "https://images.pexels.com/photos/3225531/pexels-photo-3225531.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       distance: "3.2 km",
       time: "15 min drive",
     },
@@ -102,22 +101,22 @@ const DiscoverKollam = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative py-5 lg:py-8 overflow-hidden bg-[#F5F3ED]"
+      className="relative py-16 lg:py-24 overflow-hidden bg-[#F5F3ED]"
     >
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         <div className="headline-container text-center max-w-4xl mx-auto mb-16 md:mb-20">
           <div className="overflow-hidden pb-2">
-            <h2 className="reveal-text font-custom-serif text-5xl md:text-7xl text-[#333D2E] leading-tight">
+            <h2 className="reveal-text font-serif text-5xl md:text-6xl text-[#333D2E] leading-tight">
               Discover a
             </h2>
           </div>
           <div className="overflow-hidden pb-2">
-            <h2 className="reveal-text font-custom-serif text-5xl md:text-7xl text-[#333D2E] leading-tight">
+            <h2 className="reveal-text font-serif text-5xl md:text-6xl text-[#333D2E] leading-tight">
               World Beyond.
             </h2>
           </div>
           <div className="overflow-hidden mt-4">
-            <p className="reveal-text text-lg md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
+            <p className="reveal-text text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
               Our privileged location places you within easy reach of Kollam's
               most captivating attractions, where natural beauty and cultural
               heritage create unforgettable experiences.
@@ -126,7 +125,7 @@ const DiscoverKollam = () => {
         </div>
 
         {/* Grid */}
-        <div className="attractions-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="attractions-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 px-4 md:px-0">
           {attractions.map((attraction, index) => (
             <div
               key={attraction.id}
@@ -143,7 +142,7 @@ const DiscoverKollam = () => {
               </div>
 
               <div className="p-6">
-                <h3 className="font-custom-serif text-xl text-[#333D2E] mb-3 group-hover:text-[#667250] transition-colors duration-300">
+                <h3 className="font-serif text-xl text-[#333D2E] mb-3 group-hover:text-[#667250] transition-colors duration-300">
                   {attraction.name}
                 </h3>
                 <p className="text-gray-600 text-sm mb-4 leading-relaxed">
@@ -166,7 +165,7 @@ const DiscoverKollam = () => {
         </div>
 
         {/*  Button */}
-        <div className="text-center mt-16">
+        <div className="text-center mt-16 px-4 md:px-0">
           <a
             href="#"
             className="group inline-flex items-center text-lg font-semibold text-[#333D2E] hover:text-[#667250] transition-colors duration-300"

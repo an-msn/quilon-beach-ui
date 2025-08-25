@@ -1,20 +1,8 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {
-  FiSun,
-  FiCoffee,
-  FiAward,
-  FiWind,
-  FiChevronRight,
-} from "react-icons/fi";
-import {
-  FaSwimmingPool,
-  FaSpa,
-  FaUtensils,
-  FaBuilding,
-  FaCocktail,
-} from "react-icons/fa";
+import { FiChevronRight } from "react-icons/fi";
+import { FaSwimmingPool, FaSpa, FaUtensils, FaCocktail } from "react-icons/fa";
 
 // Register the GSAP plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -158,12 +146,12 @@ const Facilities = () => {
       {/* Luxury background pattern */}
       <div className="luxury-pattern absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNNjAgMTBsNjAgNjBMNjAgMTMwTDAgNzBaTTE0MCA3MGw2MDY2MEwxNDAgMTkwTDEwMCAxMzBaIiBmaWxsPSIjMzMzIiBmaWxsLW9wYWNpdHk9IjAuMSIvPjwvc3ZnPg==')]"></div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative z-10">
         <div className="headline-container text-center max-w-4xl mx-auto mb-16 md:mb-20">
           <div className="overflow-hidden pb-2">
             <h2
               ref={addToHeadlineRefs}
-              className="font-custom-serif text-5xl md:text-7xl text-[#333D2E] leading-tight"
+              className="font-serif text-5xl md:text-7xl text-[#333D2E] leading-tight"
             >
               A World of
             </h2>
@@ -171,7 +159,7 @@ const Facilities = () => {
           <div className="overflow-hidden pb-2">
             <h2
               ref={addToHeadlineRefs}
-              className="font-custom-serif text-5xl md:text-7xl text-[#333D2E] leading-tight"
+              className="font-serif text-5xl md:text-7xl text-[#333D2E] leading-tight"
             >
               Coastal Pleasures.
             </h2>
@@ -189,28 +177,32 @@ const Facilities = () => {
 
         <div
           ref={gridRef}
-          className="features-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="features-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 px-4 md:px-0"
         >
           {facilities.map((facility, index) => (
             <div
               key={index}
               ref={addToFeatureCardRefs}
-              className="feature-card flex flex-col items-center text-center p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 group"
+              className="feature-card flex flex-col items-center text-center p-6 md:p-8 bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 group"
             >
               <div className="text-[#667250] mb-4 transition-transform duration-300 group-hover:scale-110">
                 {facility.icon}
               </div>
-              <h3 className="font-semibold text-2xl text-[#333D2E] mb-2 group-hover:text-[#A39788] transition-colors duration-300">
+              <h3 className="font-semibold text-xl md:text-2xl text-[#333D2E] mb-2 group-hover:text-[#A39788] transition-colors duration-300">
                 {facility.title}
               </h3>
-              <p className="text-gray-600 text-base">{facility.description}</p>
+              <p className="text-gray-600 text-sm md:text-base">
+                {facility.description}
+              </p>
             </div>
           ))}
         </div>
 
-        <div className="text-center mt-16">
-          <button className="group inline-flex items-center bg-[#A39788] text-white px-8 py-4 rounded-full hover:bg-[#8C8275] transition-all duration-500 overflow-hidden shadow-lg hover:shadow-xl">
-            <span className="relative z-10">Explore All Facilities</span>
+        <div className="text-center mt-16 px-4 md:px-0">
+          <button className="group inline-flex items-center bg-[#A39788] text-white px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-[#8C8275] transition-all duration-500 overflow-hidden shadow-lg hover:shadow-xl">
+            <span className="relative z-10 text-sm md:text-base">
+              Explore All Facilities
+            </span>
             <FiChevronRight className="ml-2 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20 -skew-x-12 transform translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
           </button>
