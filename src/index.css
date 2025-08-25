@@ -5,9 +5,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ======================= */
-/* ==== BASE STYLES ===== */
-/* ======================= */
+/* BASE STYLES  */
+
 body {
   margin: 0;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -24,9 +23,8 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ======================= */
-/* ====== UTILITIES ====== */
-/* ======================= */
+/* UTILITIES */
+
 .transition-smooth {
   transition: all 0.3s ease-in-out;
 }
@@ -55,61 +53,8 @@ html {
   }
 }
 
-/* ======================= */
-/* ======== HERO ========= */
-/* ======================= */
-.bg-hero-image {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
+/* RESPONSIVE */
 
-.hero-gradient {
-  background: linear-gradient(
-    to right,
-    rgba(13, 43, 80, 0.7),
-    rgba(26, 74, 138, 0.5)
-  );
-}
-
-/* ======================= */
-/* ======== ROOMS ======== */
-/* ======================= */
-.room-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.room-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-/* ======================= */
-/* ====== FACILITIES ===== */
-/* ======================= */
-.facility-card {
-  transition: transform 0.3s ease;
-}
-
-.facility-card:hover {
-  transform: translateY(-3px);
-}
-
-/* ======================= */
-/* ======= GALLERY ======= */
-/* ======================= */
-.gallery-item {
-  transition: transform 0.3s ease;
-}
-
-.gallery-item:hover {
-  transform: scale(1.03);
-}
-
-/* ======================= */
-/* ===== RESPONSIVE ====== */
-/* ======================= */
 @media (max-width: 768px) {
   .bg-hero-image {
     background-attachment: scroll;
