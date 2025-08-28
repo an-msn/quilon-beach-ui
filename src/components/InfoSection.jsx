@@ -7,10 +7,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const HeroSection = () => {
   const sectionRef = useRef(null);
-  const bgImageRef = useRef(null);
   const headlineRefs = useRef([]);
   const subtitleRef = useRef(null);
   const scrollIndicatorRef = useRef(null);
+  const textContainerRef = useRef(null);
 
   const addToHeadlineRefs = (el) => {
     if (el && !headlineRefs.current.includes(el)) {
@@ -20,18 +20,7 @@ const HeroSection = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.to(bgImageRef.current, {
-        scale: 1.05,
-        yPercent: 8,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: 1.5,
-        },
-      });
-
+      // Text entrance animation
       const tl = gsap.timeline({
         defaults: { ease: "power3.out" },
         delay: 0.5,
@@ -53,12 +42,47 @@ const HeroSection = () => {
         "-=0.5"
       );
 
+      // Scroll indicator animation
       gsap.to(scrollIndicatorRef.current, {
         y: 8,
         duration: 1.5,
         repeat: -1,
         yoyo: true,
         ease: "sine.inOut",
+      });
+
+      // Color transition on scroll
+      gsap.to(textContainerRef.current, {
+        color: "#333d2e", // Target color
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top center",
+          end: "bottom top",
+          scrub: true,
+        },
+      });
+
+      // Individual letter animation on scroll
+      const textElements = [...headlineRefs.current, subtitleRef.current];
+
+      textElements.forEach((element) => {
+        gsap.fromTo(
+          element,
+          {
+            color: "#a1a99c", // Lighter version of the base color
+          },
+          {
+            color: "#333d2e", // Original color
+            ease: "power1.out",
+            scrollTrigger: {
+              trigger: element,
+              start: "top 80%",
+              end: "top 30%",
+              scrub: true,
+            },
+          }
+        );
       });
     }, sectionRef);
 
@@ -71,7 +95,7 @@ const HeroSection = () => {
       className="relative h-screen w-full flex flex-col justify-end items-center overflow-hidden"
     >
       {/* Background */}
-      <div ref={bgImageRef} className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0">
         <img
           src={introBg}
           alt="Lush tropical seashore view"
@@ -80,11 +104,12 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
       </div>
 
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center pb-32">
-        <h1
-          className="font-custom-serif text-4xl md:text-5xl lg:text-6xl font-normal mb-6"
-          style={{ color: "#333d2e" }}
-        >
+      <div
+        ref={textContainerRef}
+        className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center pb-32"
+        style={{ color: "#a1a99c" }} // Initial lighter color
+      >
+        <h1 className="font-custom-serif text-4xl md:text-5xl lg:text-6xl font-normal mb-6">
           <div className="overflow-hidden">
             <div
               ref={(el) => addToHeadlineRefs(el)}
@@ -107,7 +132,6 @@ const HeroSection = () => {
           <p
             ref={subtitleRef}
             className="text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed"
-            style={{ color: "#333d2e" }}
           >
             Where tranquil waters meet timeless grace
           </p>
